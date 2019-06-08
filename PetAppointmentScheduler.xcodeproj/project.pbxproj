@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DD2CF9AE22AC46A4000C0295 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9AD22AC46A4000C0295 /* AppDelegate.m */; };
+		DD2CF9B122AC46A4000C0295 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9B022AC46A4000C0295 /* ViewController.m */; };
+		DD2CF9B422AC46A4000C0295 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD2CF9B222AC46A4000C0295 /* Main.storyboard */; };
+		DD2CF9B622AC46A4000C0295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD2CF9B522AC46A4000C0295 /* Assets.xcassets */; };
+		DD2CF9B922AC46A4000C0295 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD2CF9B722AC46A4000C0295 /* LaunchScreen.storyboard */; };
+		DD2CF9BC22AC46A4000C0295 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9BB22AC46A4000C0295 /* main.m */; };
+		DD2CF9C622AC46A5000C0295 /* PetAppointmentSchedulerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9C522AC46A5000C0295 /* PetAppointmentSchedulerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DD2CF9C222AC46A5000C0295 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD2CF9A122AC46A3000C0295 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD2CF9A822AC46A3000C0295;
+			remoteInfo = PetAppointmentScheduler;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DD2CF9A922AC46A3000C0295 /* PetAppointmentScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetAppointmentScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD2CF9AC22AC46A4000C0295 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DD2CF9AD22AC46A4000C0295 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DD2CF9AF22AC46A4000C0295 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DD2CF9B022AC46A4000C0295 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DD2CF9B322AC46A4000C0295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DD2CF9B522AC46A4000C0295 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD2CF9B822AC46A4000C0295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DD2CF9BA22AC46A4000C0295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD2CF9BB22AC46A4000C0295 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DD2CF9C122AC46A5000C0295 /* PetAppointmentSchedulerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetAppointmentSchedulerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD2CF9C522AC46A5000C0295 /* PetAppointmentSchedulerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetAppointmentSchedulerTests.m; sourceTree = "<group>"; };
+		DD2CF9C722AC46A5000C0295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD2CF9A622AC46A3000C0295 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD2CF9BE22AC46A5000C0295 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DD2CF9A022AC46A3000C0295 = {
+			isa = PBXGroup;
+			children = (
+				DD2CF9AB22AC46A4000C0295 /* PetAppointmentScheduler */,
+				DD2CF9C422AC46A5000C0295 /* PetAppointmentSchedulerTests */,
+				DD2CF9AA22AC46A3000C0295 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DD2CF9AA22AC46A3000C0295 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD2CF9A922AC46A3000C0295 /* PetAppointmentScheduler.app */,
+				DD2CF9C122AC46A5000C0295 /* PetAppointmentSchedulerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD2CF9AB22AC46A4000C0295 /* PetAppointmentScheduler */ = {
+			isa = PBXGroup;
+			children = (
+				DD2CF9AC22AC46A4000C0295 /* AppDelegate.h */,
+				DD2CF9AD22AC46A4000C0295 /* AppDelegate.m */,
+				DD2CF9AF22AC46A4000C0295 /* ViewController.h */,
+				DD2CF9B022AC46A4000C0295 /* ViewController.m */,
+				DD2CF9B222AC46A4000C0295 /* Main.storyboard */,
+				DD2CF9B522AC46A4000C0295 /* Assets.xcassets */,
+				DD2CF9B722AC46A4000C0295 /* LaunchScreen.storyboard */,
+				DD2CF9BA22AC46A4000C0295 /* Info.plist */,
+				DD2CF9BB22AC46A4000C0295 /* main.m */,
+			);
+			path = PetAppointmentScheduler;
+			sourceTree = "<group>";
+		};
+		DD2CF9C422AC46A5000C0295 /* PetAppointmentSchedulerTests */ = {
+			isa = PBXGroup;
+			children = (
+				DD2CF9C522AC46A5000C0295 /* PetAppointmentSchedulerTests.m */,
+				DD2CF9C722AC46A5000C0295 /* Info.plist */,
+			);
+			path = PetAppointmentSchedulerTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DD2CF9A822AC46A3000C0295 /* PetAppointmentScheduler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD2CF9CA22AC46A5000C0295 /* Build configuration list for PBXNativeTarget "PetAppointmentScheduler" */;
+			buildPhases = (
+				DD2CF9A522AC46A3000C0295 /* Sources */,
+				DD2CF9A622AC46A3000C0295 /* Frameworks */,
+				DD2CF9A722AC46A3000C0295 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PetAppointmentScheduler;
+			productName = PetAppointmentScheduler;
+			productReference = DD2CF9A922AC46A3000C0295 /* PetAppointmentScheduler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DD2CF9C022AC46A5000C0295 /* PetAppointmentSchedulerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD2CF9CD22AC46A5000C0295 /* Build configuration list for PBXNativeTarget "PetAppointmentSchedulerTests" */;
+			buildPhases = (
+				DD2CF9BD22AC46A5000C0295 /* Sources */,
+				DD2CF9BE22AC46A5000C0295 /* Frameworks */,
+				DD2CF9BF22AC46A5000C0295 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD2CF9C322AC46A5000C0295 /* PBXTargetDependency */,
+			);
+			name = PetAppointmentSchedulerTests;
+			productName = PetAppointmentSchedulerTests;
+			productReference = DD2CF9C122AC46A5000C0295 /* PetAppointmentSchedulerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD2CF9A122AC46A3000C0295 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Jeff Cedilla";
+				TargetAttributes = {
+					DD2CF9A822AC46A3000C0295 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					DD2CF9C022AC46A5000C0295 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = DD2CF9A822AC46A3000C0295;
+					};
+				};
+			};
+			buildConfigurationList = DD2CF9A422AC46A3000C0295 /* Build configuration list for PBXProject "PetAppointmentScheduler" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DD2CF9A022AC46A3000C0295;
+			productRefGroup = DD2CF9AA22AC46A3000C0295 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD2CF9A822AC46A3000C0295 /* PetAppointmentScheduler */,
+				DD2CF9C022AC46A5000C0295 /* PetAppointmentSchedulerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD2CF9A722AC46A3000C0295 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD2CF9B922AC46A4000C0295 /* LaunchScreen.storyboard in Resources */,
+				DD2CF9B622AC46A4000C0295 /* Assets.xcassets in Resources */,
+				DD2CF9B422AC46A4000C0295 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD2CF9BF22AC46A5000C0295 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD2CF9A522AC46A3000C0295 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD2CF9B122AC46A4000C0295 /* ViewController.m in Sources */,
+				DD2CF9BC22AC46A4000C0295 /* main.m in Sources */,
+				DD2CF9AE22AC46A4000C0295 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD2CF9BD22AC46A5000C0295 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD2CF9C622AC46A5000C0295 /* PetAppointmentSchedulerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DD2CF9C322AC46A5000C0295 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD2CF9A822AC46A3000C0295 /* PetAppointmentScheduler */;
+			targetProxy = DD2CF9C222AC46A5000C0295 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DD2CF9B222AC46A4000C0295 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD2CF9B322AC46A4000C0295 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DD2CF9B722AC46A4000C0295 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD2CF9B822AC46A4000C0295 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DD2CF9C822AC46A5000C0295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DD2CF9C922AC46A5000C0295 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DD2CF9CB22AC46A5000C0295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZ688Q6N5R;
+				INFOPLIST_FILE = PetAppointmentScheduler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeff.PetAppointmentScheduler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DD2CF9CC22AC46A5000C0295 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZ688Q6N5R;
+				INFOPLIST_FILE = PetAppointmentScheduler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeff.PetAppointmentScheduler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DD2CF9CE22AC46A5000C0295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZ688Q6N5R;
+				INFOPLIST_FILE = PetAppointmentSchedulerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeff.PetAppointmentSchedulerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PetAppointmentScheduler.app/PetAppointmentScheduler";
+			};
+			name = Debug;
+		};
+		DD2CF9CF22AC46A5000C0295 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZ688Q6N5R;
+				INFOPLIST_FILE = PetAppointmentSchedulerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeff.PetAppointmentSchedulerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PetAppointmentScheduler.app/PetAppointmentScheduler";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD2CF9A422AC46A3000C0295 /* Build configuration list for PBXProject "PetAppointmentScheduler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD2CF9C822AC46A5000C0295 /* Debug */,
+				DD2CF9C922AC46A5000C0295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD2CF9CA22AC46A5000C0295 /* Build configuration list for PBXNativeTarget "PetAppointmentScheduler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD2CF9CB22AC46A5000C0295 /* Debug */,
+				DD2CF9CC22AC46A5000C0295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD2CF9CD22AC46A5000C0295 /* Build configuration list for PBXNativeTarget "PetAppointmentSchedulerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD2CF9CE22AC46A5000C0295 /* Debug */,
+				DD2CF9CF22AC46A5000C0295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DD2CF9A122AC46A3000C0295 /* Project object */;
+}
