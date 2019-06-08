@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DD2CF9AE22AC46A4000C0295 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9AD22AC46A4000C0295 /* AppDelegate.m */; };
-		DD2CF9B122AC46A4000C0295 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9B022AC46A4000C0295 /* ViewController.m */; };
+		DD2CF9B122AC46A4000C0295 /* AppointmentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9B022AC46A4000C0295 /* AppointmentsViewController.m */; };
 		DD2CF9B422AC46A4000C0295 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD2CF9B222AC46A4000C0295 /* Main.storyboard */; };
 		DD2CF9B622AC46A4000C0295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD2CF9B522AC46A4000C0295 /* Assets.xcassets */; };
 		DD2CF9B922AC46A4000C0295 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD2CF9B722AC46A4000C0295 /* LaunchScreen.storyboard */; };
@@ -30,8 +30,8 @@
 		DD2CF9A922AC46A3000C0295 /* PetAppointmentScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetAppointmentScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2CF9AC22AC46A4000C0295 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DD2CF9AD22AC46A4000C0295 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DD2CF9AF22AC46A4000C0295 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DD2CF9B022AC46A4000C0295 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DD2CF9AF22AC46A4000C0295 /* AppointmentsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppointmentsViewController.h; sourceTree = "<group>"; };
+		DD2CF9B022AC46A4000C0295 /* AppointmentsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppointmentsViewController.m; sourceTree = "<group>"; };
 		DD2CF9B322AC46A4000C0295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD2CF9B522AC46A4000C0295 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD2CF9B822AC46A4000C0295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,15 +81,10 @@
 		DD2CF9AB22AC46A4000C0295 /* PetAppointmentScheduler */ = {
 			isa = PBXGroup;
 			children = (
-				DD2CF9AC22AC46A4000C0295 /* AppDelegate.h */,
-				DD2CF9AD22AC46A4000C0295 /* AppDelegate.m */,
-				DD2CF9AF22AC46A4000C0295 /* ViewController.h */,
-				DD2CF9B022AC46A4000C0295 /* ViewController.m */,
-				DD2CF9B222AC46A4000C0295 /* Main.storyboard */,
-				DD2CF9B522AC46A4000C0295 /* Assets.xcassets */,
-				DD2CF9B722AC46A4000C0295 /* LaunchScreen.storyboard */,
-				DD2CF9BA22AC46A4000C0295 /* Info.plist */,
-				DD2CF9BB22AC46A4000C0295 /* main.m */,
+				DD2CF9D322AC493E000C0295 /* Supporting Files */,
+				DD2CF9D222AC4930000C0295 /* View Controllers */,
+				DD2CF9D122AC4924000C0295 /* Models */,
+				DD2CF9D022AC4916000C0295 /* Assets */,
 			);
 			path = PetAppointmentScheduler;
 			sourceTree = "<group>";
@@ -101,6 +96,43 @@
 				DD2CF9C722AC46A5000C0295 /* Info.plist */,
 			);
 			path = PetAppointmentSchedulerTests;
+			sourceTree = "<group>";
+		};
+		DD2CF9D022AC4916000C0295 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DD2CF9B222AC46A4000C0295 /* Main.storyboard */,
+				DD2CF9B522AC46A4000C0295 /* Assets.xcassets */,
+				DD2CF9B722AC46A4000C0295 /* LaunchScreen.storyboard */,
+				DD2CF9BA22AC46A4000C0295 /* Info.plist */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		DD2CF9D122AC4924000C0295 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DD2CF9D222AC4930000C0295 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD2CF9AF22AC46A4000C0295 /* AppointmentsViewController.h */,
+				DD2CF9B022AC46A4000C0295 /* AppointmentsViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		DD2CF9D322AC493E000C0295 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DD2CF9AC22AC46A4000C0295 /* AppDelegate.h */,
+				DD2CF9AD22AC46A4000C0295 /* AppDelegate.m */,
+				DD2CF9BB22AC46A4000C0295 /* main.m */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,7 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD2CF9B122AC46A4000C0295 /* ViewController.m in Sources */,
+				DD2CF9B122AC46A4000C0295 /* AppointmentsViewController.m in Sources */,
 				DD2CF9BC22AC46A4000C0295 /* main.m in Sources */,
 				DD2CF9AE22AC46A4000C0295 /* AppDelegate.m in Sources */,
 			);

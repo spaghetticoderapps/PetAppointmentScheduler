@@ -6,13 +6,13 @@
 //  Copyright © 2019 Jeff Cedilla. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "AppointmentsViewController.h"
 
-@interface ViewController ()
+@interface AppointmentsViewController ()
 
 @end
 
-@implementation ViewController
+@implementation AppointmentsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
