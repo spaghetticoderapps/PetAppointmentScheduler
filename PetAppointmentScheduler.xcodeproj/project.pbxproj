@@ -14,6 +14,10 @@
 		DD2CF9B922AC46A4000C0295 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD2CF9B722AC46A4000C0295 /* LaunchScreen.storyboard */; };
 		DD2CF9BC22AC46A4000C0295 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9BB22AC46A4000C0295 /* main.m */; };
 		DD2CF9C622AC46A5000C0295 /* PetAppointmentSchedulerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9C522AC46A5000C0295 /* PetAppointmentSchedulerTests.m */; };
+		DD2CF9D722AC4A5A000C0295 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9D622AC4A5A000C0295 /* APIClient.m */; };
+		DD2CF9DA22AC4C19000C0295 /* Appointment.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9D922AC4C19000C0295 /* Appointment.m */; };
+		DD2CF9DD22AC4C24000C0295 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9DC22AC4C24000C0295 /* User.m */; };
+		DD2CF9E022AC4C2B000C0295 /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9DF22AC4C2B000C0295 /* Animal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,14 @@
 		DD2CF9C122AC46A5000C0295 /* PetAppointmentSchedulerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetAppointmentSchedulerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2CF9C522AC46A5000C0295 /* PetAppointmentSchedulerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetAppointmentSchedulerTests.m; sourceTree = "<group>"; };
 		DD2CF9C722AC46A5000C0295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD2CF9D522AC4A5A000C0295 /* APIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
+		DD2CF9D622AC4A5A000C0295 /* APIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
+		DD2CF9D822AC4C19000C0295 /* Appointment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Appointment.h; sourceTree = "<group>"; };
+		DD2CF9D922AC4C19000C0295 /* Appointment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Appointment.m; sourceTree = "<group>"; };
+		DD2CF9DB22AC4C24000C0295 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		DD2CF9DC22AC4C24000C0295 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		DD2CF9DE22AC4C2B000C0295 /* Animal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
+		DD2CF9DF22AC4C2B000C0295 /* Animal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +93,7 @@
 		DD2CF9AB22AC46A4000C0295 /* PetAppointmentScheduler */ = {
 			isa = PBXGroup;
 			children = (
+				DD2CF9D422AC4A40000C0295 /* API */,
 				DD2CF9D322AC493E000C0295 /* Supporting Files */,
 				DD2CF9D222AC4930000C0295 /* View Controllers */,
 				DD2CF9D122AC4924000C0295 /* Models */,
@@ -112,6 +125,12 @@
 		DD2CF9D122AC4924000C0295 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DD2CF9D822AC4C19000C0295 /* Appointment.h */,
+				DD2CF9D922AC4C19000C0295 /* Appointment.m */,
+				DD2CF9DB22AC4C24000C0295 /* User.h */,
+				DD2CF9DC22AC4C24000C0295 /* User.m */,
+				DD2CF9DE22AC4C2B000C0295 /* Animal.h */,
+				DD2CF9DF22AC4C2B000C0295 /* Animal.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -133,6 +152,15 @@
 				DD2CF9BB22AC46A4000C0295 /* main.m */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DD2CF9D422AC4A40000C0295 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				DD2CF9D522AC4A5A000C0295 /* APIClient.h */,
+				DD2CF9D622AC4A5A000C0295 /* APIClient.m */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +265,11 @@
 			files = (
 				DD2CF9B122AC46A4000C0295 /* AppointmentsViewController.m in Sources */,
 				DD2CF9BC22AC46A4000C0295 /* main.m in Sources */,
+				DD2CF9DD22AC4C24000C0295 /* User.m in Sources */,
 				DD2CF9AE22AC46A4000C0295 /* AppDelegate.m in Sources */,
+				DD2CF9E022AC4C2B000C0295 /* Animal.m in Sources */,
+				DD2CF9DA22AC4C19000C0295 /* Appointment.m in Sources */,
+				DD2CF9D722AC4A5A000C0295 /* APIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +429,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZ688Q6N5R;
-				INFOPLIST_FILE = PetAppointmentScheduler/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PetAppointmentScheduler/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -414,7 +446,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZ688Q6N5R;
-				INFOPLIST_FILE = PetAppointmentScheduler/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PetAppointmentScheduler/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
