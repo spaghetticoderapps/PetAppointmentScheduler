@@ -23,9 +23,9 @@
         NSDictionary *animalDictionary = object[@"animal"];
         Animal *animal = [Animal new];
         animal.ID = [animalDictionary[@"animalId"] intValue];
-        animal.breed = animalDictionary[@"breed"];
+        animal.breed = [animalDictionary[@"breed"] isKindOfClass:[NSNull class]] ? @"N/A" : animalDictionary[@"breed"];
         animal.firstName = animalDictionary[@"firstName"];
-        animal.species = animalDictionary[@"species"];
+        animal.species = [animalDictionary[@"species"] isKindOfClass:[NSNull class]] ? @"N/A" : animalDictionary[@"species"];
         
         appointment.animal = animal;
         

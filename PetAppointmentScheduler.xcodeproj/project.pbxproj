@@ -19,6 +19,7 @@
 		DD2CF9DD22AC4C24000C0295 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9DC22AC4C24000C0295 /* User.m */; };
 		DD2CF9E022AC4C2B000C0295 /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9DF22AC4C2B000C0295 /* Animal.m */; };
 		DD2CF9E322AC7C5B000C0295 /* AppointmentSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9E222AC7C5B000C0295 /* AppointmentSerializer.m */; };
+		DD2CF9E722ACE15E000C0295 /* AppointmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9E622ACE15E000C0295 /* AppointmentTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		DD2CF9DF22AC4C2B000C0295 /* Animal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
 		DD2CF9E122AC7C5B000C0295 /* AppointmentSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppointmentSerializer.h; sourceTree = "<group>"; };
 		DD2CF9E222AC7C5B000C0295 /* AppointmentSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppointmentSerializer.m; sourceTree = "<group>"; };
+		DD2CF9E522ACE15E000C0295 /* AppointmentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppointmentTableViewCell.h; sourceTree = "<group>"; };
+		DD2CF9E622ACE15E000C0295 /* AppointmentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppointmentTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,7 @@
 			children = (
 				DD2CF9D422AC4A40000C0295 /* API */,
 				DD2CF9D322AC493E000C0295 /* Supporting Files */,
+				DD2CF9E422ACE136000C0295 /* Views */,
 				DD2CF9D222AC4930000C0295 /* View Controllers */,
 				DD2CF9D122AC4924000C0295 /* Models */,
 				DD2CF9D022AC4916000C0295 /* Assets */,
@@ -166,6 +170,15 @@
 				DD2CF9E222AC7C5B000C0295 /* AppointmentSerializer.m */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		DD2CF9E422ACE136000C0295 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DD2CF9E522ACE15E000C0295 /* AppointmentTableViewCell.h */,
+				DD2CF9E622ACE15E000C0295 /* AppointmentTableViewCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +285,7 @@
 				DD2CF9BC22AC46A4000C0295 /* main.m in Sources */,
 				DD2CF9DD22AC4C24000C0295 /* User.m in Sources */,
 				DD2CF9E322AC7C5B000C0295 /* AppointmentSerializer.m in Sources */,
+				DD2CF9E722ACE15E000C0295 /* AppointmentTableViewCell.m in Sources */,
 				DD2CF9AE22AC46A4000C0295 /* AppDelegate.m in Sources */,
 				DD2CF9E022AC4C2B000C0295 /* Animal.m in Sources */,
 				DD2CF9DA22AC4C19000C0295 /* Appointment.m in Sources */,
