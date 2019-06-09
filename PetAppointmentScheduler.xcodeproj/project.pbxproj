@@ -100,10 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				DD2CF9D422AC4A40000C0295 /* API */,
-				DD2CF9D322AC493E000C0295 /* Supporting Files */,
 				DD2CF9E422ACE136000C0295 /* Views */,
 				DD2CF9D222AC4930000C0295 /* View Controllers */,
 				DD2CF9D122AC4924000C0295 /* Models */,
+				DD2CF9D322AC493E000C0295 /* Supporting Files */,
 				DD2CF9D022AC4916000C0295 /* Assets */,
 			);
 			path = PetAppointmentScheduler;

@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"Appointments";
+    
     [APIClient getAppointments:^(NSMutableArray * _Nonnull appointments) {
         __weak typeof(self) weakSelf = self;
         weakSelf.appointments = appointments;
