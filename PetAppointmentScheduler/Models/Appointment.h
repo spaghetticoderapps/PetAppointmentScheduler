@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Appointment : NSObject
 
 @property (nonatomic) int ID;
+@property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSDate *creationDate;
 @property (strong, nonatomic) NSDate *requestedDateOffset;
 @property (strong, nonatomic) User *user;

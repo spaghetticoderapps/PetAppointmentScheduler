@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppointmentsViewController : UIViewController
+@interface AppointmentsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 
 @end

@@ -1,5 +1,5 @@
 //
-//  APIClient.h
+//  AppointmentSerializer.h
 //  PetAppointmentScheduler
 //
 //  Created by Jeff Cedilla on 6/8/19.
@@ -8,13 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "Appointment.h"
-#import "AppointmentSerializer.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface APIClient : NSObject
+@interface AppointmentSerializer : NSObject
 
-+ (void) getAppointments:(void (^) (NSMutableArray *appointments)) completionBlock;
++ (NSMutableArray *) serializeAppointmentsFromJSON: (NSMutableDictionary *) json;
 
 @end
 
