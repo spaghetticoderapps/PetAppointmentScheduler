@@ -11,14 +11,14 @@
 
 @implementation APIClient
 
-+ (void)getAppointments:(void (^)(NSMutableArray * _Nonnull))completionBlock {
++ (void)getAppointmentLists:(void (^)(NSMutableArray * _Nonnull))completionBlock {
     NSString *appointmentsURLString = @"https://sampledata.petdesk.com/api/Appointments";
     NSURL *url = [NSURL URLWithString:appointmentsURLString];
     
     NSURLSessionDataTask *downloadTask = [[NSURLSession sharedSession]
                                           dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                               NSMutableDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-                                              completionBlock([AppointmentSerializer serializeAppointmentsFromJSON:json]);
+                                              completionBlock([AppointmentSerializer appointmentListsFromAppointments:[AppointmentSerializer serializeAppointmentsFromJSON:json]]);
                                           }];
     
     [downloadTask resume];

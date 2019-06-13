@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APIClient : NSObject
 
-+ (void) getAppointments:(void (^) (NSMutableArray *appointments)) completionBlock;
++ (void) getAppointmentLists:(void (^) (NSMutableArray *appointments)) completionBlock;
 
 @end
 

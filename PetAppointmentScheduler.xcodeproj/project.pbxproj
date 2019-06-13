@@ -20,6 +20,9 @@
 		DD2CF9E022AC4C2B000C0295 /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9DF22AC4C2B000C0295 /* Animal.m */; };
 		DD2CF9E322AC7C5B000C0295 /* AppointmentSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9E222AC7C5B000C0295 /* AppointmentSerializer.m */; };
 		DD2CF9E722ACE15E000C0295 /* AppointmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2CF9E622ACE15E000C0295 /* AppointmentTableViewCell.m */; };
+		DD97C49F22B1A55A0056C4F9 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DD97C49E22B1A55A0056C4F9 /* NSDate+Utilities.m */; };
+		DD97C4A522B1B3C20056C4F9 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DD97C4A422B1B3C20056C4F9 /* NSString+Utilities.m */; };
+		DD97C4A822B1B7720056C4F9 /* AppointmentList.m in Sources */ = {isa = PBXBuildFile; fileRef = DD97C4A722B1B7720056C4F9 /* AppointmentList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,12 @@
 		DD2CF9E222AC7C5B000C0295 /* AppointmentSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppointmentSerializer.m; sourceTree = "<group>"; };
 		DD2CF9E522ACE15E000C0295 /* AppointmentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppointmentTableViewCell.h; sourceTree = "<group>"; };
 		DD2CF9E622ACE15E000C0295 /* AppointmentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppointmentTableViewCell.m; sourceTree = "<group>"; };
+		DD97C49D22B1A55A0056C4F9 /* NSDate+Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		DD97C49E22B1A55A0056C4F9 /* NSDate+Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
+		DD97C4A322B1B3C20056C4F9 /* NSString+Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Utilities.h"; sourceTree = "<group>"; };
+		DD97C4A422B1B3C20056C4F9 /* NSString+Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utilities.m"; sourceTree = "<group>"; };
+		DD97C4A622B1B7720056C4F9 /* AppointmentList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppointmentList.h; sourceTree = "<group>"; };
+		DD97C4A722B1B7720056C4F9 /* AppointmentList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppointmentList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +108,7 @@
 		DD2CF9AB22AC46A4000C0295 /* PetAppointmentScheduler */ = {
 			isa = PBXGroup;
 			children = (
+				DD97C49922B1A50D0056C4F9 /* Utilities */,
 				DD2CF9D422AC4A40000C0295 /* API */,
 				DD2CF9E422ACE136000C0295 /* Views */,
 				DD2CF9D222AC4930000C0295 /* View Controllers */,
@@ -131,6 +141,8 @@
 		DD2CF9D122AC4924000C0295 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DD97C4A622B1B7720056C4F9 /* AppointmentList.h */,
+				DD97C4A722B1B7720056C4F9 /* AppointmentList.m */,
 				DD2CF9D822AC4C19000C0295 /* Appointment.h */,
 				DD2CF9D922AC4C19000C0295 /* Appointment.m */,
 				DD2CF9DB22AC4C24000C0295 /* User.h */,
@@ -179,6 +191,17 @@
 				DD2CF9E622ACE15E000C0295 /* AppointmentTableViewCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DD97C49922B1A50D0056C4F9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DD97C49D22B1A55A0056C4F9 /* NSDate+Utilities.h */,
+				DD97C49E22B1A55A0056C4F9 /* NSDate+Utilities.m */,
+				DD97C4A322B1B3C20056C4F9 /* NSString+Utilities.h */,
+				DD97C4A422B1B3C20056C4F9 /* NSString+Utilities.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,12 +307,15 @@
 				DD2CF9B122AC46A4000C0295 /* AppointmentsViewController.m in Sources */,
 				DD2CF9BC22AC46A4000C0295 /* main.m in Sources */,
 				DD2CF9DD22AC4C24000C0295 /* User.m in Sources */,
+				DD97C4A822B1B7720056C4F9 /* AppointmentList.m in Sources */,
 				DD2CF9E322AC7C5B000C0295 /* AppointmentSerializer.m in Sources */,
+				DD97C4A522B1B3C20056C4F9 /* NSString+Utilities.m in Sources */,
 				DD2CF9E722ACE15E000C0295 /* AppointmentTableViewCell.m in Sources */,
 				DD2CF9AE22AC46A4000C0295 /* AppDelegate.m in Sources */,
 				DD2CF9E022AC4C2B000C0295 /* Animal.m in Sources */,
 				DD2CF9DA22AC4C19000C0295 /* Appointment.m in Sources */,
 				DD2CF9D722AC4A5A000C0295 /* APIClient.m in Sources */,
+				DD97C49F22B1A55A0056C4F9 /* NSDate+Utilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

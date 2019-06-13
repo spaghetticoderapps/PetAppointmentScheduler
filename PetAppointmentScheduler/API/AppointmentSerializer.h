@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "Appointment.h"
+#import "AppointmentList.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AppointmentSerializer : NSObject
 
 + (NSMutableArray *) serializeAppointmentsFromJSON: (NSMutableDictionary *) json;
-
++ (NSMutableArray<AppointmentList *> *) appointmentListsFromAppointments: (NSMutableArray<Appointment *> *) appointments;
 @end
 
 NS_ASSUME_NONNULL_END

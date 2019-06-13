@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int ID;
 @property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSDate *creationDate;
-@property (strong, nonatomic) NSDate *requestedDateOffset;
+@property (strong, nonatomic) NSDate *requestedDate;
 @property (strong, nonatomic) User *user;
 @property (strong, nonatomic) Animal *animal;
 
