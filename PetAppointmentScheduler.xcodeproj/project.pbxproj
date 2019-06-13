@@ -23,6 +23,7 @@
 		DD97C49F22B1A55A0056C4F9 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DD97C49E22B1A55A0056C4F9 /* NSDate+Utilities.m */; };
 		DD97C4A522B1B3C20056C4F9 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DD97C4A422B1B3C20056C4F9 /* NSString+Utilities.m */; };
 		DD97C4A822B1B7720056C4F9 /* AppointmentList.m in Sources */ = {isa = PBXBuildFile; fileRef = DD97C4A722B1B7720056C4F9 /* AppointmentList.m */; };
+		DD97C4AB22B23BE90056C4F9 /* AppointmentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD97C4AA22B23BE90056C4F9 /* AppointmentDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		DD97C4A422B1B3C20056C4F9 /* NSString+Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utilities.m"; sourceTree = "<group>"; };
 		DD97C4A622B1B7720056C4F9 /* AppointmentList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppointmentList.h; sourceTree = "<group>"; };
 		DD97C4A722B1B7720056C4F9 /* AppointmentList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppointmentList.m; sourceTree = "<group>"; };
+		DD97C4A922B23BE90056C4F9 /* AppointmentDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppointmentDetailViewController.h; sourceTree = "<group>"; };
+		DD97C4AA22B23BE90056C4F9 /* AppointmentDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppointmentDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,8 @@
 			children = (
 				DD2CF9AF22AC46A4000C0295 /* AppointmentsViewController.h */,
 				DD2CF9B022AC46A4000C0295 /* AppointmentsViewController.m */,
+				DD97C4A922B23BE90056C4F9 /* AppointmentDetailViewController.h */,
+				DD97C4AA22B23BE90056C4F9 /* AppointmentDetailViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD2CF9B122AC46A4000C0295 /* AppointmentsViewController.m in Sources */,
+				DD97C4AB22B23BE90056C4F9 /* AppointmentDetailViewController.m in Sources */,
 				DD2CF9BC22AC46A4000C0295 /* main.m in Sources */,
 				DD2CF9DD22AC4C24000C0295 /* User.m in Sources */,
 				DD97C4A822B1B7720056C4F9 /* AppointmentList.m in Sources */,

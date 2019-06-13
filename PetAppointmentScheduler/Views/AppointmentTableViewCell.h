@@ -12,9 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AppointmentTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *animalFirstNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *breedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *animalLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 + (NSString *) identifier;
 

@@ -29,40 +29,51 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="160.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="IFm-5h-wRH">
-                                                    <rect key="frame" x="44" y="48.5" width="350" height="63.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpq-si-dyL">
+                                                    <rect key="frame" x="53.5" y="59.5" width="26.5" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6ZK-Hn-6cr">
+                                                    <rect key="frame" x="100" y="59.5" width="106.5" height="42"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="animalFirstName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YI-57-gSB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="139.5" height="21.5"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="breed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpq-si-dyL">
-                                                            <rect key="frame" x="0.0" y="25.5" width="37.5" height="17"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="859-lu-cqH">
-                                                            <rect key="frame" x="0.0" y="46.5" width="28.5" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="29.5" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="animalFirstName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YI-57-gSB">
+                                                            <rect key="frame" x="0.0" y="25" width="106.5" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkX-6J-FuF">
+                                                    <rect key="frame" x="385" y="70.5" width="9" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="IFm-5h-wRH" firstAttribute="centerY" secondItem="nnV-BK-VTs" secondAttribute="centerY" id="o2A-o0-Dcn"/>
-                                                <constraint firstItem="IFm-5h-wRH" firstAttribute="leading" secondItem="nnV-BK-VTs" secondAttribute="leadingMargin" constant="24" id="v7o-z2-mwH"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="IFm-5h-wRH" secondAttribute="trailing" id="xHo-al-Uwo"/>
+                                                <constraint firstItem="FkX-6J-FuF" firstAttribute="trailing" secondItem="nnV-BK-VTs" secondAttribute="trailingMargin" id="58S-ui-C01"/>
+                                                <constraint firstItem="FkX-6J-FuF" firstAttribute="centerY" secondItem="nnV-BK-VTs" secondAttribute="centerY" id="Ck8-aU-24a"/>
+                                                <constraint firstItem="6ZK-Hn-6cr" firstAttribute="centerY" secondItem="nnV-BK-VTs" secondAttribute="centerY" id="D2I-yc-W6p"/>
+                                                <constraint firstItem="Hpq-si-dyL" firstAttribute="top" secondItem="6ZK-Hn-6cr" secondAttribute="top" id="DQT-Sv-bGY"/>
+                                                <constraint firstItem="6ZK-Hn-6cr" firstAttribute="leading" secondItem="nnV-BK-VTs" secondAttribute="leading" constant="100" id="MBO-cl-49L"/>
+                                                <constraint firstItem="6ZK-Hn-6cr" firstAttribute="leading" secondItem="Hpq-si-dyL" secondAttribute="trailing" constant="20" id="gJ5-dV-T1K"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="animalFirstNameLabel" destination="0YI-57-gSB" id="N0l-Tp-2ez"/>
-                                            <outlet property="breedLabel" destination="Hpq-si-dyL" id="07z-zm-sFh"/>
+                                            <outlet property="animalLabel" destination="0YI-57-gSB" id="N0l-Tp-2ez"/>
+                                            <outlet property="statusLabel" destination="FkX-6J-FuF" id="dpH-vo-30n"/>
+                                            <outlet property="timeLabel" destination="Hpq-si-dyL" id="07z-zm-sFh"/>
                                             <outlet property="typeLabel" destination="859-lu-cqH" id="OB9-g7-waO"/>
+                                            <segue destination="fZD-li-l5i" kind="show" identifier="appointmentDetail" id="V2u-IZ-yjJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -107,6 +118,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SM8-NU-4xi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-36.231884057971016" y="28.794642857142854"/>
+        </scene>
+        <!--Appointment Detail View Controller-->
+        <scene sceneID="Rat-vP-HSa">
+            <objects>
+                <viewController id="fZD-li-l5i" customClass="AppointmentDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XlX-SE-COq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="O1b-ks-AiK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6b7-ex-eBS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1654" y="29"/>
         </scene>
     </scenes>
 </document>

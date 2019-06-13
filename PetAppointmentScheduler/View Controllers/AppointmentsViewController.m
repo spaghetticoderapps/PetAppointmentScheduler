@@ -10,11 +10,13 @@
 #import "APIClient.h"
 #import "AppointmentTableViewCell.h"
 #import "NSDate+Utilities.h"
+#import "AppointmentDetailViewController.h"
 
 @interface AppointmentsViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray<AppointmentList *> *appointmentLists;
+@property (strong, nonatomic) Appointment *selectedAppointment;
 
 @end
 
@@ -39,7 +41,7 @@
 // MARK: - Table View Data Source
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [_appointmentLists[section].date formattedTime];
+    return [_appointmentLists[section].date formattedDay];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -51,9 +53,10 @@
     AppointmentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[AppointmentTableViewCell identifier]];
     
     Appointment *appointment = _appointmentLists[indexPath.section].appointments[indexPath.row];
-    cell.animalFirstNameLabel.text = appointment.animal.firstName;
-    cell.breedLabel.text = appointment.animal.breed;
     cell.typeLabel.text =  appointment.type;
+    cell.animalLabel.text = [NSString stringWithFormat:@"%@ (%@)",appointment.animal.firstName, appointment.animal.breed ];
+    cell.timeLabel.text = [appointment.requestedDate formattedTime];
+    
     return cell;
 }
 
@@ -68,5 +71,19 @@
     return 100;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:true];
+    _selectedAppointment = _appointmentLists[indexPath.section].appointments[indexPath.row];
+}
+
+// MARK: - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:[AppointmentDetailViewController segueIdentifier]])
+    {
+        AppointmentDetailViewController *appointmentDetailViewController = [segue destinationViewController];
+        appointmentDetailViewController.appointment = _selectedAppointment;
+    }
+}
 
 @end

@@ -17,9 +17,15 @@
     return [NSDate dateWithTimeInterval: seconds sinceDate: self];
 }
 
-- (NSString *)formattedTime {
+- (NSString *)formattedDay {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"MMM d yyyy";
+    return [formatter stringFromDate:self];
+}
+
+- (NSString *)formattedTime {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"hh:ss a";
     return [formatter stringFromDate:self];
 }
 
