@@ -15,6 +15,7 @@
 @interface AppointmentsViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) NSMutableArray<AppointmentList *> *appointmentLists;
 @property (strong, nonatomic) Appointment *selectedAppointment;
 
@@ -26,11 +27,11 @@
     [super viewDidLoad];
     
     self.title = @"Appointments";
-    
     [APIClient getAppointmentLists:^(NSMutableArray * _Nonnull appointmentLists) {
         __weak typeof(self) weakSelf = self;
         weakSelf.appointmentLists = appointmentLists;
         dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.activityIndicator stopAnimating];
             [weakSelf.tableView reloadData];
         });
         
@@ -73,7 +74,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:true];
-    _selectedAppointment = _appointmentLists[indexPath.section].appointments[indexPath.row];
 }
 
 // MARK: - Segue
@@ -81,6 +81,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:[AppointmentDetailViewController segueIdentifier]])
     {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        _selectedAppointment = _appointmentLists[indexPath.section].appointments[indexPath.row];
         AppointmentDetailViewController *appointmentDetailViewController = [segue destinationViewController];
         appointmentDetailViewController.appointment = _selectedAppointment;
     }

@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AppointmentDetailViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userLabel;
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *animalInfoLabel;
+
+
 @property (strong, nonatomic) Appointment *appointment;
 + (NSString *) segueIdentifier;
 
