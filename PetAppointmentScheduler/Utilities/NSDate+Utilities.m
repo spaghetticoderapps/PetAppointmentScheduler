@@ -25,7 +25,7 @@
 
 - (NSString *)formattedTime {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"hh:ss a";
+    formatter.dateFormat = @"h:mm a";
     return [formatter stringFromDate:self];
 }
 

@@ -21,7 +21,7 @@
         appointment.ID = [object[@"appointmentId"] intValue];
         appointment.type = object[@"appointmentType"];
         appointment.creationDate = [[object[@"createDateTime"] convertToDate] localTime];
-        appointment.requestedDate = [[object[@"requestedDateTimeOffset"] convertOffsetToDate] localTime];
+        appointment.requestedDate = [object[@"requestedDateTimeOffset"] convertOffsetToDate];
         
         NSDictionary *animalDictionary = object[@"animal"];
         Animal *animal = [Animal new];

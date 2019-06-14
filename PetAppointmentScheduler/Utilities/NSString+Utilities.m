@@ -19,9 +19,8 @@
 
 - (NSDate *)convertOffsetToDate {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    NSString *string = [self substringToIndex:[self length] - 6];
-    formatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss";
-    return [formatter dateFromString:string];
+    formatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
+    return [formatter dateFromString:self];
 }
 
 @end
