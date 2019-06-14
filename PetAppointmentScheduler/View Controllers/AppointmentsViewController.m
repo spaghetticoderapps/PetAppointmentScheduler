@@ -16,26 +16,34 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (strong, nonatomic) NSMutableArray<AppointmentList *> *appointmentLists;
 @property (strong, nonatomic) Appointment *selectedAppointment;
 
 @end
 
 @implementation AppointmentsViewController
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (!_appointmentLists) {
+        [APIClient getAppointmentLists:^(NSMutableArray * _Nonnull appointmentLists) {
+            __weak typeof(self) weakSelf = self;
+            weakSelf.appointmentLists = appointmentLists;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.activityIndicator stopAnimating];
+                [weakSelf.tableView reloadData];
+            });
+            
+        }];
+    } else {
+        [_tableView reloadData];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = @"Appointments";
-    [APIClient getAppointmentLists:^(NSMutableArray * _Nonnull appointmentLists) {
-        __weak typeof(self) weakSelf = self;
-        weakSelf.appointmentLists = appointmentLists;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf.activityIndicator stopAnimating];
-            [weakSelf.tableView reloadData];
-        });
-        
-    }];
+    
     
 }
 
@@ -57,6 +65,7 @@
     cell.typeLabel.text =  appointment.type;
     cell.animalLabel.text = [NSString stringWithFormat:@"%@ (%@)",appointment.animal.firstName, appointment.animal.breed ];
     cell.timeLabel.text = [appointment.requestedDate formattedTime];
+    cell.statusLabel.text = [appointment formattedStatus];
     
     return cell;
 }

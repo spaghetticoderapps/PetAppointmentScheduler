@@ -29,4 +29,20 @@
     return @"appointmentDetail";
 }
 
+
+// MARK: - Actions
+
+- (IBAction)decline:(id)sender {
+    _appointment.status = AppointmentStatusDeclined;
+}
+
+- (IBAction)reschedule:(id)sender {
+    
+}
+
+- (IBAction)accept:(id)sender {
+    _appointment.status = AppointmentStatusAccepted;
+}
+
+
 @end

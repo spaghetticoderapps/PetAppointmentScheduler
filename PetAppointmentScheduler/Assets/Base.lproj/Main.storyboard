@@ -144,16 +144,25 @@
                                                 <state key="normal" title="Decline">
                                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="decline:" destination="fZD-li-l5i" eventType="touchUpInside" id="5Gl-7C-K6Z"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ms4-cA-bYK">
                                                 <rect key="frame" x="142.5" y="0.0" width="113" height="30"/>
                                                 <state key="normal" title="Reschedule"/>
+                                                <connections>
+                                                    <action selector="reschedule:" destination="fZD-li-l5i" eventType="touchUpInside" id="n4N-kZ-dcb"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rH-Xl-ruf">
                                                 <rect key="frame" x="285.5" y="0.0" width="112.5" height="30"/>
                                                 <state key="normal" title="Accept">
                                                     <color key="titleColor" red="0.12946687126102549" green="0.65987864847715738" blue="0.12951037272501226" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="accept:" destination="fZD-li-l5i" eventType="touchUpInside" id="TdC-ZJ-NBF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

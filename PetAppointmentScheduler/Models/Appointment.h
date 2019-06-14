@@ -14,12 +14,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Appointment : NSObject
 
+typedef NS_ENUM(NSInteger, AppointmentStatus) {
+    AppointmentStatusUnknown,
+    AppointmentStatusDeclined,
+    AppointmentStatusAccepted
+};
+
+
 @property (nonatomic) int ID;
+@property (nonatomic) AppointmentStatus status;
 @property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSDate *creationDate;
 @property (strong, nonatomic) NSDate *requestedDate;
 @property (strong, nonatomic) User *user;
 @property (strong, nonatomic) Animal *animal;
+
+- (NSString *) formattedStatus;
 
 @end
 

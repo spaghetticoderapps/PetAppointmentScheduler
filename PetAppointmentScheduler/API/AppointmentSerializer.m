@@ -9,6 +9,7 @@
 #import "AppointmentSerializer.h"
 #import "NSDate+Utilities.h"
 #import "NSString+Utilities.h"
+#import "Cache.h"
 
 @implementation AppointmentSerializer
 
@@ -61,7 +62,7 @@
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"requestedDate" ascending:TRUE];
     [appointments sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     
-    // Create appointment list objects through sorting
+    // Create appointment list objects via sorting
     for (int i=0; i <= appointments.count-1; i++) {
         if (i==0) {
             [appointmentLists lastObject].date = appointments[i].requestedDate;

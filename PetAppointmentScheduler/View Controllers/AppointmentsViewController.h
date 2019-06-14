@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppointmentList.h"
 
 @interface AppointmentsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
+@property (strong, nonatomic) NSMutableArray<AppointmentList *> *appointmentLists;
 
 @end
 

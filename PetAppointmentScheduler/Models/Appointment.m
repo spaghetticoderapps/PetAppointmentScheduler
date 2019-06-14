@@ -10,4 +10,19 @@
 
 @implementation Appointment
 
+- (NSString *)formattedStatus {
+    switch (_status) {
+        case AppointmentStatusDeclined:
+            return @"👎";
+            break;
+        case AppointmentStatusAccepted:
+            return @"👌";
+            break;
+        case AppointmentStatusUnknown:
+            return @"👉";
+            break;
+    }
+    return @"";
+}
+
 @end
