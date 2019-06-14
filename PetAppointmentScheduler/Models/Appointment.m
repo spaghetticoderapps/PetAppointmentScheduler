@@ -13,13 +13,13 @@
 - (NSString *)formattedStatus {
     switch (_status) {
         case AppointmentStatusDeclined:
-            return @"👎";
+            return @"❌";
             break;
         case AppointmentStatusAccepted:
-            return @"👌";
+            return @"✅";
             break;
         case AppointmentStatusUnknown:
-            return @"👉";
+            return @"?";
             break;
     }
     return @"";

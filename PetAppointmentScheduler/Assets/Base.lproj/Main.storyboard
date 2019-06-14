@@ -223,8 +223,11 @@
                         <viewLayoutGuide key="safeArea" id="O1b-ks-AiK"/>
                     </view>
                     <connections>
+                        <outlet property="acceptButton" destination="8rH-Xl-ruf" id="1J6-U8-G2l"/>
                         <outlet property="animalInfoLabel" destination="b9G-cV-SCW" id="VCB-7A-lbR"/>
                         <outlet property="dateLabel" destination="CeD-Hc-PaB" id="qMy-Sg-6ie"/>
+                        <outlet property="declineButton" destination="A2W-fr-9N3" id="7Rb-uw-Ja3"/>
+                        <outlet property="rescheduleButton" destination="ms4-cA-bYK" id="ZeE-nh-tbs"/>
                         <outlet property="typeLabel" destination="XOi-gb-rhi" id="wjJ-ZW-cFS"/>
                         <outlet property="userLabel" destination="W5w-3J-UMT" id="s25-pd-6Yy"/>
                     </connections>

@@ -24,6 +24,7 @@
 		DD97C4A522B1B3C20056C4F9 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DD97C4A422B1B3C20056C4F9 /* NSString+Utilities.m */; };
 		DD97C4A822B1B7720056C4F9 /* AppointmentList.m in Sources */ = {isa = PBXBuildFile; fileRef = DD97C4A722B1B7720056C4F9 /* AppointmentList.m */; };
 		DD97C4AB22B23BE90056C4F9 /* AppointmentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD97C4AA22B23BE90056C4F9 /* AppointmentDetailViewController.m */; };
+		DDAD2D6522B3867100BCAD61 /* UIButton+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DDAD2D6422B3867100BCAD61 /* UIButton+Utilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		DD97C4A722B1B7720056C4F9 /* AppointmentList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppointmentList.m; sourceTree = "<group>"; };
 		DD97C4A922B23BE90056C4F9 /* AppointmentDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppointmentDetailViewController.h; sourceTree = "<group>"; };
 		DD97C4AA22B23BE90056C4F9 /* AppointmentDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppointmentDetailViewController.m; sourceTree = "<group>"; };
+		DDAD2D6322B3867100BCAD61 /* UIButton+Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Utilities.h"; sourceTree = "<group>"; };
+		DDAD2D6422B3867100BCAD61 /* UIButton+Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Utilities.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,8 @@
 				DD97C49E22B1A55A0056C4F9 /* NSDate+Utilities.m */,
 				DD97C4A322B1B3C20056C4F9 /* NSString+Utilities.h */,
 				DD97C4A422B1B3C20056C4F9 /* NSString+Utilities.m */,
+				DDAD2D6322B3867100BCAD61 /* UIButton+Utilities.h */,
+				DDAD2D6422B3867100BCAD61 /* UIButton+Utilities.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -317,6 +322,7 @@
 				DD2CF9E322AC7C5B000C0295 /* AppointmentSerializer.m in Sources */,
 				DD97C4A522B1B3C20056C4F9 /* NSString+Utilities.m in Sources */,
 				DD2CF9E722ACE15E000C0295 /* AppointmentTableViewCell.m in Sources */,
+				DDAD2D6522B3867100BCAD61 /* UIButton+Utilities.m in Sources */,
 				DD2CF9AE22AC46A4000C0295 /* AppDelegate.m in Sources */,
 				DD2CF9E022AC4C2B000C0295 /* Animal.m in Sources */,
 				DD2CF9DA22AC4C19000C0295 /* Appointment.m in Sources */,
