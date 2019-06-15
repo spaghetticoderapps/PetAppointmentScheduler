@@ -18,5 +18,8 @@
     return [UIColor colorWithRed:0.13 green:0.42 blue:0.73 alpha:1.00];
 }
 
++ (UIColor *)lightYellowColor {
+    return [UIColor colorWithRed:1.00 green:0.97 blue:0.78 alpha:1.00];
+}
 
 @end

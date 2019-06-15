@@ -22,13 +22,14 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) Appointment *selectedAppointment;
-
+@property (strong, nonatomic) NSIndexPath *selectedIndexPath;
 @end
 
 @implementation AppointmentsViewController
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
     if (!_appointmentLists) {
         [APIClient getAppointmentLists:^(NSMutableArray * _Nonnull appointmentLists) {
             __weak typeof(self) weakSelf = self;
@@ -47,7 +48,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.title = @"Appt. Requests";
     
     
@@ -73,6 +73,31 @@
     cell.timeLabel.text = [appointment.requestedDate formattedTime];
     cell.statusLabel.text = [appointment formattedStatus];
     
+    if (_selectedIndexPath == indexPath) {
+        
+        // Animate status label
+        [cell.statusLabel setAlpha:0];
+        [cell.statusLabel setTransform:CGAffineTransformMakeScale(0, 0)];
+        [UIView animateWithDuration:0.5 delay:0.5 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            [cell.statusLabel setAlpha:1];
+            [cell.statusLabel setTransform:CGAffineTransformMakeScale(1.3, 1.3)];
+        } completion:^(BOOL finished){
+            [UIView animateWithDuration:0.5 animations:^{
+                [cell.statusLabel setTransform:CGAffineTransformMakeScale(1.0, 1.)];
+            }];
+        }];
+        
+        // Animate background color
+        NSTimeInterval animationDuration = 0.8;
+        [UIView animateWithDuration:animationDuration/2 animations:^{
+            [cell setBackgroundColor:[UIColor lightYellowColor]];
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:animationDuration/2 animations:^{
+                [cell setBackgroundColor:[UIColor whiteColor]];
+            }];
+        }];
+    }
+    
     return cell;
 }
 
@@ -83,11 +108,8 @@
 
 // MARK: - Table View Delegate
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 75;
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    _selectedIndexPath = indexPath;
     [tableView deselectRowAtIndexPath:indexPath animated:true];
 }
 
@@ -106,7 +128,11 @@
         [self->_appointmentLists rescheduleAppointment:appointment];
         [self alertWithMessage:[NSString stringWithFormat:@"\nAppointment accepted and rescheduled to %@.\n", [appointment.requestedDate formattedTime]]];
         appointment.status = AppointmentStatusAccepted;
+        self->_selectedIndexPath = indexPath;
+        self->_appointmentLists = [self->_appointmentLists sort];
         [tableView reloadData];
+        completionHandler(YES);
+        
     }];
     [rescheduleAction setBackgroundColor:[UIColor lightBlueColor]];
     return [UISwipeActionsConfiguration configurationWithActions:@[rescheduleAction]];
@@ -118,15 +144,18 @@
     
     UIContextualAction *declineAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"Decline" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
         appointment.status = AppointmentStatusDeclined;
-        [tableView reloadData];
+        self->_selectedIndexPath = indexPath;
+        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        completionHandler(YES);
     }];
     
     [declineAction setBackgroundColor:[UIColor redColor]];
     
     UIContextualAction *acceptAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"Accept" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
         appointment.status = AppointmentStatusAccepted;
-        [tableView reloadData];
-        
+        self->_selectedIndexPath = indexPath;
+        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        completionHandler(YES);
     }];
     
     [acceptAction setBackgroundColor:[UIColor darkGreenColor]];
