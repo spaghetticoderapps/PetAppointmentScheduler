@@ -28,6 +28,7 @@
 		DDAD2D6B22B4304600BCAD61 /* NSMutableArray+AppointmentList.m in Sources */ = {isa = PBXBuildFile; fileRef = DDAD2D6A22B4304600BCAD61 /* NSMutableArray+AppointmentList.m */; };
 		DDAD2D6E22B4811B00BCAD61 /* NSMutableArray+Appointment.m in Sources */ = {isa = PBXBuildFile; fileRef = DDAD2D6D22B4811B00BCAD61 /* NSMutableArray+Appointment.m */; };
 		DDAD2D7122B486B500BCAD61 /* UIViewController+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DDAD2D7022B486B500BCAD61 /* UIViewController+Utilities.m */; };
+		DDAD2D7422B55C9C00BCAD61 /* UIColor+Style.m in Sources */ = {isa = PBXBuildFile; fileRef = DDAD2D7322B55C9C00BCAD61 /* UIColor+Style.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		DDAD2D6D22B4811B00BCAD61 /* NSMutableArray+Appointment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Appointment.m"; sourceTree = "<group>"; };
 		DDAD2D6F22B486B500BCAD61 /* UIViewController+Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utilities.h"; sourceTree = "<group>"; };
 		DDAD2D7022B486B500BCAD61 /* UIViewController+Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utilities.m"; sourceTree = "<group>"; };
+		DDAD2D7222B55C9C00BCAD61 /* UIColor+Style.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Style.h"; sourceTree = "<group>"; };
+		DDAD2D7322B55C9C00BCAD61 /* UIColor+Style.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Style.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +228,8 @@
 				DDAD2D6D22B4811B00BCAD61 /* NSMutableArray+Appointment.m */,
 				DDAD2D6F22B486B500BCAD61 /* UIViewController+Utilities.h */,
 				DDAD2D7022B486B500BCAD61 /* UIViewController+Utilities.m */,
+				DDAD2D7222B55C9C00BCAD61 /* UIColor+Style.h */,
+				DDAD2D7322B55C9C00BCAD61 /* UIColor+Style.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 				DD2CF9BC22AC46A4000C0295 /* main.m in Sources */,
 				DD2CF9DD22AC4C24000C0295 /* User.m in Sources */,
 				DDAD2D7122B486B500BCAD61 /* UIViewController+Utilities.m in Sources */,
+				DDAD2D7422B55C9C00BCAD61 /* UIColor+Style.m in Sources */,
 				DDAD2D6B22B4304600BCAD61 /* NSMutableArray+AppointmentList.m in Sources */,
 				DD97C4A822B1B7720056C4F9 /* AppointmentList.m in Sources */,
 				DD2CF9E322AC7C5B000C0295 /* AppointmentSerializer.m in Sources */,

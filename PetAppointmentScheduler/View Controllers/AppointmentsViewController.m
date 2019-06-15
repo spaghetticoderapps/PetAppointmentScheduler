@@ -13,6 +13,9 @@
 #import "AppointmentDetailViewController.h"
 #import "NSMutableArray+Appointment.h"
 #import "NSMutableArray+AppointmentList.h"
+#import "UIColor+Style.h"
+#import "NSMutableArray+AppointmentList.h"
+#import "UIViewController+Utilities.h"
 
 @interface AppointmentsViewController ()
 
@@ -94,6 +97,41 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
+}
+
+- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Appointment *appointment = self->_appointmentLists[indexPath.section].appointments[indexPath.row];
+    
+    UIContextualAction *rescheduleAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"Reschedule" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+        [self->_appointmentLists rescheduleAppointment:appointment];
+        [self alertWithMessage:[NSString stringWithFormat:@"\nAppointment accepted and rescheduled to %@.\n", [appointment.requestedDate formattedTime]]];
+        appointment.status = AppointmentStatusAccepted;
+        [tableView reloadData];
+    }];
+    [rescheduleAction setBackgroundColor:[UIColor lightBlueColor]];
+    return [UISwipeActionsConfiguration configurationWithActions:@[rescheduleAction]];
+}
+
+- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Appointment *appointment = self->_appointmentLists[indexPath.section].appointments[indexPath.row];
+    
+    UIContextualAction *declineAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"Decline" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+        appointment.status = AppointmentStatusDeclined;
+        [tableView reloadData];
+    }];
+    
+    [declineAction setBackgroundColor:[UIColor redColor]];
+    
+    UIContextualAction *acceptAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"Accept" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+        appointment.status = AppointmentStatusAccepted;
+        [tableView reloadData];
+        
+    }];
+    
+    [acceptAction setBackgroundColor:[UIColor darkGreenColor]];
+    
+    return [UISwipeActionsConfiguration configurationWithActions:@[acceptAction, declineAction]];
 }
 
 // MARK: - Segue

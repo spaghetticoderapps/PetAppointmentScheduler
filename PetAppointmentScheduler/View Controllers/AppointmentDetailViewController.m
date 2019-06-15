@@ -39,7 +39,7 @@
     self.title = [NSString stringWithFormat:@"%@", [_appointment.requestedDate formattedTime]];
     _dateLabel.text = [_appointment.requestedDate formattedDay];
     _typeLabel.text = [NSString stringWithFormat: @"%@ for %@", _appointment.type, _appointment.animal.firstName];
-    _animalInfoLabel.text = [NSString stringWithFormat:@"%@ (%@)", _appointment.animal.species, _appointment.animal.breed];
+    _animalInfoLabel.text = [NSString stringWithFormat:@"Species: %@\nBreed: %@", _appointment.animal.species, _appointment.animal.breed];
     _userLabel.text = [NSString stringWithFormat:@"Requested by %@ %@ on %@", _appointment.user.firstName, _appointment.user.lastName, [_appointment.creationDate formattedDay]];
 }
 
