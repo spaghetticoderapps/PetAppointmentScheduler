@@ -7,7 +7,7 @@
 //
 
 #import "APIClient.h"
-
+#import "NSMutableArray+Appointment.h"
 
 @implementation APIClient
 
@@ -18,7 +18,7 @@
     NSURLSessionDataTask *downloadTask = [[NSURLSession sharedSession]
                                           dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                               NSMutableDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-                                              completionBlock([AppointmentSerializer appointmentListsFromAppointments:[AppointmentSerializer serializeAppointmentsFromJSON:json]]);
+                                              completionBlock([[AppointmentSerializer serializeAppointmentsFromJSON:json] sortedAppointmentList]);
                                           }];
     
     [downloadTask resume];

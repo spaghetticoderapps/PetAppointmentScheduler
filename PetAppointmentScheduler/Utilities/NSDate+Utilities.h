@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSDate *) localTime;
 -(NSString *) formattedDay;
 -(NSString *) formattedTime;
+-(NSDate *) addOneHour;
+-(NSString *) utcString;
+
 @end
 
 NS_ASSUME_NONNULL_END

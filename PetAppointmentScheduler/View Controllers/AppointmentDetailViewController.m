@@ -9,6 +9,9 @@
 #import "AppointmentDetailViewController.h"
 #import "NSDate+Utilities.h"
 #import "UIButton+Utilities.h"
+#import "NSMutableArray+AppointmentList.h"
+#import "UIViewController+Utilities.h"
+#import "NSDate+Utilities.h"
 
 @interface AppointmentDetailViewController ()
 
@@ -44,16 +47,25 @@
 
 - (IBAction)decline:(id)sender {
     [self selectButton:_declineButton];
-    _appointment.status = AppointmentStatusDeclined;
+    if (_appointment.status != AppointmentStatusDeclined) {
+        _appointment.status = AppointmentStatusDeclined;
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (IBAction)reschedule:(id)sender {
+    [_appointmentLists rescheduleAppointment:_appointment];
+    [self alertWithMessage:[NSString stringWithFormat:@"\nAppointment accepted and rescheduled to %@.\n", [_appointment.requestedDate formattedTime]]];
     [self selectButton:_rescheduleButton];
+    _appointment.status = AppointmentStatusAccepted;
 }
 
 - (IBAction)accept:(id)sender {
     [self selectButton:_acceptButton];
-    _appointment.status = AppointmentStatusAccepted;
+    if (_appointment.status != AppointmentStatusAccepted) {
+        _appointment.status = AppointmentStatusAccepted;
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 

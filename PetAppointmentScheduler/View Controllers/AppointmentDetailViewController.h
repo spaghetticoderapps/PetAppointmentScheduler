@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Appointment.h"
+#import "AppointmentList.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AppointmentDetailViewController : UIViewController
@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *animalInfoLabel;
 
-
+@property (strong, nonatomic) NSMutableArray<AppointmentList *> *appointmentLists;
 @property (strong, nonatomic) Appointment *appointment;
 + (NSString *) segueIdentifier;
 

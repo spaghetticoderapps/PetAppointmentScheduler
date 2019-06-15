@@ -11,6 +11,8 @@
 #import "AppointmentTableViewCell.h"
 #import "NSDate+Utilities.h"
 #import "AppointmentDetailViewController.h"
+#import "NSMutableArray+Appointment.h"
+#import "NSMutableArray+AppointmentList.h"
 
 @interface AppointmentsViewController ()
 
@@ -35,6 +37,7 @@
             
         }];
     } else {
+        _appointmentLists = [_appointmentLists sort];
         [_tableView reloadData];
     }
 }
@@ -89,6 +92,10 @@
     return 25;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
 // MARK: - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -98,6 +105,7 @@
         _selectedAppointment = _appointmentLists[indexPath.section].appointments[indexPath.row];
         AppointmentDetailViewController *appointmentDetailViewController = [segue destinationViewController];
         appointmentDetailViewController.appointment = _selectedAppointment;
+        appointmentDetailViewController.appointmentLists = _appointmentLists;
     }
 }
 

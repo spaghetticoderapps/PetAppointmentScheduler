@@ -19,13 +19,23 @@
 
 - (NSString *)formattedDay {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"MMMM dd, yyyy";
+    formatter.dateFormat = @"EEEE, MMMM dd, yyyy";
     return [formatter stringFromDate:self];
 }
 
 - (NSString *)formattedTime {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"h:mm a";
+    return [formatter stringFromDate:self];
+}
+
+- (NSDate *)addOneHour {
+    return [self dateByAddingTimeInterval:3600];
+}
+
+- (NSString *)utcString {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
     return [formatter stringFromDate:self];
 }
 
