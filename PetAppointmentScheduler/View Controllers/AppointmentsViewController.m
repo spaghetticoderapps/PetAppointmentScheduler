@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) Appointment *selectedAppointment;
 @property (strong, nonatomic) NSIndexPath *selectedIndexPath;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 @end
 
 @implementation AppointmentsViewController
@@ -50,7 +51,10 @@
     [super viewDidLoad];
     self.title = @"Appt. Requests";
     
-    
+    _refreshControl = [UIRefreshControl new];
+    [_refreshControl setAttributedTitle: [[NSAttributedString new] initWithString:@"Saving appointments..."]];
+    [_refreshControl addTarget:self action:@selector(saveAppointmentDecisions) forControlEvents:UIControlEventValueChanged];
+    [_tableView setRefreshControl:_refreshControl];
 }
 
 // MARK: - Table View Data Source
@@ -74,7 +78,7 @@
     cell.statusLabel.text = [appointment formattedStatus];
     
     if (_selectedIndexPath == indexPath) {
-        
+        _selectedIndexPath = nil;
         // Animate status label
         [cell.statusLabel setAlpha:0];
         [cell.statusLabel setTransform:CGAffineTransformMakeScale(0, 0)];
@@ -175,5 +179,18 @@
         appointmentDetailViewController.appointmentLists = _appointmentLists;
     }
 }
+
+
+// MARK: - Private Functions
+
+- (void) saveAppointmentDecisions {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        self->_appointmentLists = [self->_appointmentLists removeProcessedAppointments];
+        [self->_tableView reloadData];
+        [self->_refreshControl endRefreshing];
+    });
+}
+
+
 
 @end
