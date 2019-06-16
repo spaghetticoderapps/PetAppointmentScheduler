@@ -66,35 +66,44 @@
     return @[];
 }
 
-- (NSMutableArray<AppointmentList *> *)removeProcessedAppointments {
-    NSMutableArray<AppointmentList *> *appointmentLists = [NSMutableArray<AppointmentList *> new];
+- (void)removeProcessedAppointments:(void (^)(NSMutableArray * _Nonnull))completionBlock {
     
-    for (int i = 0; i <= self.count-1 ; i++) {
-        AppointmentList *appointmentList = self[i];
-        AppointmentList *copiedAppointmentList = appointmentList;
-        [appointmentLists addObject:copiedAppointmentList];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        NSMutableArray<AppointmentList *> *appointmentLists = [NSMutableArray<AppointmentList *> new];
         
-        for (int i=0; i <= appointmentList.appointments.count-1; i++) {
-            Appointment *existingAppointment = appointmentList.appointments[i];
-            if (existingAppointment.status) {
-                
-                NSUInteger copiedAppointmentIndex = 0;
-                
-                for (Appointment *copiedAppointment in copiedAppointmentList.appointments) {
-                    if (existingAppointment.ID == copiedAppointment.ID) {
-                        copiedAppointmentIndex = [copiedAppointmentList.appointments indexOfObject:copiedAppointment];
+        for (int i = 0; i < self.count ; i++) {
+            
+            AppointmentList *appointmentList = self[i];
+            AppointmentList *copiedAppointmentList = appointmentList;
+            [appointmentLists addObject:copiedAppointmentList];
+            
+            for (int i=0; i < appointmentList.appointments.count; i++) {
+                Appointment *existingAppointment = appointmentList.appointments[i];
+                if (existingAppointment.status) {
+                    
+                    NSUInteger copiedAppointmentIndex = 0;
+                    
+                    for (Appointment *copiedAppointment in copiedAppointmentList.appointments) {
+                        if (existingAppointment.ID == copiedAppointment.ID) {
+                            copiedAppointmentIndex = [copiedAppointmentList.appointments indexOfObject:copiedAppointment];
+                        }
                     }
-                }
-                
-                [copiedAppointmentList.appointments removeObjectAtIndex:copiedAppointmentIndex];
-                if (appointmentList.appointments.count == 0) {
-                    [appointmentLists removeObject:appointmentList];
+                    
+                    [copiedAppointmentList.appointments removeObjectAtIndex:copiedAppointmentIndex];
+                    
+                    
+                    if (appointmentList.appointments.count == 0) {
+                        [appointmentLists removeObject:appointmentList];
+                        break;
+                    }
                 }
             }
         }
-    }
+        completionBlock(appointmentLists);
+    });
     
-    return appointmentLists;
+    
 }
+
 
 @end

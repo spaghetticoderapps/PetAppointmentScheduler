@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) rescheduleAppointment: (Appointment *) appointment;
 - (NSMutableArray<AppointmentList *> *) sort;
 - (NSMutableArray<NSDate *> *) availableDatesInUpcomingMonth;
-- (NSMutableArray<AppointmentList *> *) removeProcessedAppointments;
+- (void) removeProcessedAppointments: (void (^) (NSMutableArray *appointmentLists)) completionBlock;
 @end
 
 NS_ASSUME_NONNULL_END

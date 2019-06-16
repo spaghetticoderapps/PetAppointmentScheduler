@@ -184,13 +184,12 @@
 // MARK: - Private Functions
 
 - (void) saveAppointmentDecisions {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        self->_appointmentLists = [self->_appointmentLists removeProcessedAppointments];
+    [_appointmentLists removeProcessedAppointments:^(NSMutableArray * _Nonnull appointmentLists) {
+        self->_appointmentLists = appointmentLists;
         [self->_tableView reloadData];
         [self->_refreshControl endRefreshing];
-    });
+    }];
 }
-
 
 
 @end
