@@ -48,8 +48,8 @@
     return [appointments sortedAppointmentList];
 }
 
-- (NSMutableArray<NSDate *> *)availableDatesInUpcomingMonth {
-    
+- (NSMutableArray<NSDate *> *)availableDatesInUpcomingMonthBasedOffDate:(NSDate *)date {
+    NSMutableArray<NSDate *> *availableDates = [NSMutableArray<NSDate *> new];
     NSMutableDictionary *appointmentDates = [NSMutableDictionary new];
     
     for (AppointmentList *appointmentList in self) {
@@ -58,12 +58,30 @@
         }
     }
     
-    // get all
+    NSDate *currentDate = [NSDate date];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *oneMonthComponents = [[NSDateComponents alloc] init];
+    [oneMonthComponents setMonth:1];
     
-    // get all dates from a certain time
+    NSDateComponents *oneHourComponents = [[NSDateComponents alloc] init];
+    [oneHourComponents setHour:1];
+    
+    NSDate *endDate = [calendar dateByAddingComponents:oneMonthComponents toDate:[NSDate date] options:0];
     
     
-    return @[];
+    while ([currentDate compare:endDate] == NSOrderedAscending) {
+        
+        if (!appointmentDates[[currentDate utcString]] && [currentDate isDuringOfficeHours]) {
+            [availableDates addObject:currentDate];
+        }
+        
+        currentDate = [calendar dateByAddingComponents:oneHourComponents
+                                                toDate:currentDate
+                                               options:0];
+    }
+    
+    
+    return availableDates;
 }
 
 - (void)removeProcessedAppointments:(void (^)(NSMutableArray * _Nonnull))completionBlock {

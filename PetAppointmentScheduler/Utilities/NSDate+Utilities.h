@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *) formattedTime;
 -(NSDate *) addOneHour;
 -(NSString *) utcString;
-
+-(BOOL) isDuringOfficeHours;
 @end
 
 NS_ASSUME_NONNULL_END

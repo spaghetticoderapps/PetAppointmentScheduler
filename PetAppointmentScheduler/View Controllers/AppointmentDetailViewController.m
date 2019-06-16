@@ -18,7 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *declineButton;
 @property (weak, nonatomic) IBOutlet UIButton *rescheduleButton;
 @property (weak, nonatomic) IBOutlet UIButton *acceptButton;
-
+@property (strong, nonatomic) UIDatePicker *picker;
+@property (strong, nonatomic) UIToolbar *toolbar;
 @end
 
 @implementation AppointmentDetailViewController
@@ -54,9 +55,11 @@
 }
 
 - (IBAction)reschedule:(id)sender {
-    [_appointmentLists rescheduleAppointment:_appointment];
-    [self alertWithMessage:[NSString stringWithFormat:@"\nAppointment accepted and rescheduled to %@.\n", [_appointment.requestedDate formattedTime]]];
+    [self showDatePicker];
+//    [_appointmentLists rescheduleAppointment:_appointment];
+//    [self alertWithMessage:[NSString stringWithFormat:@"\nAppointment accepted and rescheduled to %@.\n", [_appointment.requestedDate formattedTime]]];
     [self selectButton:_rescheduleButton];
+    
     _appointment.status = AppointmentStatusAccepted;
 }
 
@@ -97,5 +100,44 @@
 }
 
 
+- (IBAction)showDatePicker {
+    _picker = [[UIDatePicker alloc] init];
+    _picker.backgroundColor = [UIColor whiteColor];
+    [_picker setValue:[UIColor blackColor] forKey:@"textColor"];
+    
+    _picker.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    _picker.datePickerMode = UIDatePickerModeDateAndTime;
+    _picker.minimumDate = [NSDate date];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setMonth:1];
+    
+    NSDate *maximumDate = [calendar dateByAddingComponents:components toDate:[NSDate date] options:0];
+    _picker.maximumDate = maximumDate;
+    [_picker addTarget:self action:@selector(dueDateChanged:) forControlEvents:UIControlEventValueChanged];
+    _picker.frame = CGRectMake(0.0, [UIScreen mainScreen].bounds.size.height - 300, [UIScreen mainScreen].bounds.size.width, 300);
+    [self.view addSubview:_picker];
+    
+    _toolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 300, [UIScreen mainScreen].bounds.size.width, 50)];
+    _toolbar.barStyle = UIBarStyleDefault;
+    _toolbar.items = @[[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil], [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(onDoneButtonClick)]];
+    [_toolbar sizeToFit];
+    [self.view addSubview:_toolbar];
+}
+
+-(void) dueDateChanged:(UIDatePicker *)sender {
+    
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    
+    NSLog(@"Picked the date %@", [dateFormatter stringFromDate:[sender date]]);
+//    YOUR_LABEL.TEXT = [dateFormatter stringFromDate:[sender date]];
+}
+
+-(void)onDoneButtonClick {
+    [_toolbar removeFromSuperview];
+    [_picker removeFromSuperview];
+}
 
 @end

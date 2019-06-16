@@ -39,4 +39,50 @@
     return [formatter stringFromDate:self];
 }
 
+- (BOOL)isDuringOfficeHours {
+    NSDateComponents *openingTime = [[NSDateComponents alloc] init];
+    openingTime.hour = 8;
+    openingTime.minute = 0;
+    
+    NSDateComponents *closingTime = [[NSDateComponents alloc] init];
+    closingTime.hour = 17;
+    closingTime.minute = 0;
+    
+    NSDate *requestedAppointmentTime = [NSDate new];
+    requestedAppointmentTime = self;
+    
+    NSDateComponents *requestedAppointmentTimeComponenents = [[NSCalendar currentCalendar] components:NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond
+                                                                    fromDate:requestedAppointmentTime];
+    
+    NSMutableArray *times = [@[openingTime, closingTime, requestedAppointmentTimeComponenents] mutableCopy];
+    [times sortUsingComparator:^NSComparisonResult(NSDateComponents *t1, NSDateComponents *t2) {
+        if (t1.hour > t2.hour) {
+            return NSOrderedDescending;
+        }
+        
+        if (t1.hour < t2.hour) {
+            return NSOrderedAscending;
+        }
+        // hour is the same
+        if (t1.minute > t2.minute) {
+            return NSOrderedDescending;
+        }
+        
+        if (t1.minute < t2.minute) {
+            return NSOrderedAscending;
+        }
+        // hour and minute are the same
+        if (t1.second > t2.second) {
+            return NSOrderedDescending;
+        }
+        
+        if (t1.second < t2.second) {
+            return NSOrderedAscending;
+        }
+        return NSOrderedSame;
+        
+    }];
+    
+    return [times indexOfObject:requestedAppointmentTimeComponenents] == 1;
+}
 @end

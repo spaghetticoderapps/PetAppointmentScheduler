@@ -35,6 +35,7 @@
         [APIClient getAppointmentLists:^(NSMutableArray * _Nonnull appointmentLists) {
             __weak typeof(self) weakSelf = self;
             weakSelf.appointmentLists = appointmentLists;
+            [weakSelf.appointmentLists availableDatesInUpcomingMonthBasedOffDate:[NSDate date]];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf.activityIndicator stopAnimating];
                 [weakSelf.tableView reloadData];
@@ -44,6 +45,7 @@
     } else {
         _appointmentLists = [_appointmentLists sort];
         [_tableView reloadData];
+        
     }
 }
 
@@ -91,7 +93,7 @@
             }];
         }];
         
-        // Animate background color
+        // Animate cell background color
         NSTimeInterval animationDuration = 0.8;
         [UIView animateWithDuration:animationDuration/2 animations:^{
             [cell setBackgroundColor:[UIColor lightYellowColor]];
