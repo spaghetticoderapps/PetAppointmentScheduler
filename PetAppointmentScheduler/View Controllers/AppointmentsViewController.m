@@ -52,7 +52,7 @@
     self.title = @"Appt. Requests";
     
     _refreshControl = [UIRefreshControl new];
-    [_refreshControl setAttributedTitle: [[NSAttributedString new] initWithString:@"Saving appointments..."]];
+    [_refreshControl setAttributedTitle: [[NSAttributedString new] initWithString:@"Processing appointment requests..."]];
     [_refreshControl addTarget:self action:@selector(saveAppointmentDecisions) forControlEvents:UIControlEventValueChanged];
     [_tableView setRefreshControl:_refreshControl];
 }
@@ -77,7 +77,7 @@
     cell.timeLabel.text = [appointment.requestedDate formattedTime];
     cell.statusLabel.text = [appointment formattedStatus];
     
-    if (_selectedIndexPath == indexPath) {
+    if (_selectedIndexPath == indexPath && appointment.status) {
         _selectedIndexPath = nil;
         // Animate status label
         [cell.statusLabel setAlpha:0];
