@@ -12,7 +12,7 @@
 
 @implementation ReschedulerPickerView
 
-- (instancetype)initWithAppointment:(Appointment *) appointment
+- (instancetype) initWithAppointment:(Appointment *) appointment
                               dates:(NSMutableArray<NSDate *> *) dates
 {
     self = [super init];
@@ -28,17 +28,17 @@
 
 // MARK: - UIPickerView Data Source
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+- (NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
 }
 
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+- (NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     return _dates.count;
 }
 
 // MARK: - UIPickerView Delegate
 
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+- (NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return [_dates[row] shortFormattedTime];
 }
 

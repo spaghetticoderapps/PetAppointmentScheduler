@@ -59,11 +59,7 @@
 
 - (IBAction)reschedule:(id)sender {
     [self showReschedulerPickerView];
-//    [_appointmentLists rescheduleAppointment:_appointment];
-//    [self alertWithMessage:[NSString stringWithFormat:@"\nAppointment accepted and rescheduled to %@.\n", [_appointment.requestedDate formattedTime]]];
     [self selectButton:_rescheduleButton];
-    
-//    _appointment.status = AppointmentStatusAccepted;
 }
 
 - (IBAction)accept:(id)sender {

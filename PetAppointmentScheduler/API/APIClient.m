@@ -17,13 +17,12 @@
     
     NSURLSessionDataTask *downloadTask = [[NSURLSession sharedSession]
                                           dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                              
                                               if (error) {
                                                   completionBlock(nil, error);
+                                              } else {
+                                                  NSMutableDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+                                                  completionBlock([[AppointmentSerializer serializeAppointmentsFromJSON:json] sortedAppointmentList], nil);
                                               }
-                                              
-                                              NSMutableDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-                                              completionBlock([[AppointmentSerializer serializeAppointmentsFromJSON:json] sortedAppointmentList], nil);
                                           }];
     
     [downloadTask resume];

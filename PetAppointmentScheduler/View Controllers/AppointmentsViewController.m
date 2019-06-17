@@ -39,6 +39,7 @@
             if (error) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [weakSelf alertWithError:error];
+                    [weakSelf.activityIndicator stopAnimating];
                 });
             } else {
                 weakSelf.appointmentLists = appointmentLists;
@@ -56,7 +57,7 @@
     }
 }
 
-- (void)viewDidLoad {
+- (void) viewDidLoad {
     [super viewDidLoad];
     self.title = @"Appt. Requests";
     
@@ -68,11 +69,11 @@
 
 // MARK: - Table View Data Source
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return [_appointmentLists[section].date formattedDay];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     return _appointmentLists.count;
 }
 
@@ -130,10 +131,6 @@
     return 25;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-
 - (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
     Appointment *appointment = self->_appointmentLists[indexPath.section].appointments[indexPath.row];
     
@@ -150,6 +147,9 @@
     [rescheduleAction setBackgroundColor:[UIColor lightBlueColor]];
     return [UISwipeActionsConfiguration configurationWithActions:@[rescheduleAction]];
 }
+
+
+// MARK: - Row Swipe Actions
 
 - (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
     

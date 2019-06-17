@@ -15,7 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) NSMutableArray<NSDate *> *dates;
 @property (strong, nonatomic) Appointment *appointment;
+
 -(instancetype) initWithAppointment: (Appointment *) appointment dates: (NSMutableArray<NSDate*> *) dates;
+
 @end
 
 NS_ASSUME_NONNULL_END
