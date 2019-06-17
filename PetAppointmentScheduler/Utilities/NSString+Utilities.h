@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (Utilities)
 
--(NSDate *) convertToDate;
--(NSDate *) convertOffsetToDate;
+- (NSDate *) convertToDate;
+- (NSDate *) convertOffsetToDate;
 
 @end
 

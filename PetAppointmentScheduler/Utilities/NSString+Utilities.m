@@ -11,13 +11,13 @@
 @implementation NSString (Utilities)
 
 
-- (NSDate *)convertToDate {
+- (NSDate *) convertToDate {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss";
     return [formatter dateFromString:self];
 }
 
-- (NSDate *)convertOffsetToDate {
+- (NSDate *) convertOffsetToDate {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
     return [formatter dateFromString:self];

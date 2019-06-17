@@ -74,7 +74,6 @@
         
         if (!appointmentDates[[copiedDate utcString]] && [copiedDate isDuringOfficeHours]) {
             [availableDates addObject:copiedDate];
-            NSLog(@"%@, %@", [copiedDate formattedDay], [copiedDate formattedTime]);
         }
         
         copiedDate = [calendar dateByAddingComponents:oneHourComponents
@@ -85,8 +84,9 @@
     return availableDates;
 }
 
-- (void)removeProcessedAppointments:(void (^)(NSMutableArray * _Nonnull))completionBlock {
+- (void) removeProcessedAppointments:(void (^)(NSMutableArray * _Nonnull))completionBlock {
     
+    // Imitate server POST request
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         NSMutableArray<AppointmentList *> *appointmentLists = [NSMutableArray<AppointmentList *> new];
         

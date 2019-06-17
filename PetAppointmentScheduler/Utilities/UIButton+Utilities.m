@@ -15,12 +15,12 @@
     self.layer.cornerRadius = 5;
 }
 
-- (void)addBorder {
+- (void) addBorder {
     self.layer.borderColor = [[UIColor blackColor] CGColor];
     self.layer.borderWidth = 0.5;
 }
 
-- (void)removeBorder {
+- (void) removeBorder {
     self.layer.borderWidth = 0;
 }
 

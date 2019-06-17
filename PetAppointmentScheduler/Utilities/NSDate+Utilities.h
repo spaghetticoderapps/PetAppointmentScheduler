@@ -12,14 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSDate (Utilities)
 
--(NSDate *) localTime;
--(NSString *) formattedDay;
--(NSString *) formattedTime;
--(NSString *) shortFormattedTime;
--(NSDate *) addOneHour;
--(NSString *) utcString;
--(BOOL) isDuringOfficeHours;
--(NSDate *) roundedToNextHour;
+- (NSDate *) localTime;
+- (NSString *) formattedDay;
+- (NSString *) formattedTime;
+- (NSString *) shortFormattedTime;
+- (NSDate *) addOneHour;
+- (NSString *) utcString;
+- (BOOL) isDuringOfficeHours;
+- (NSDate *) roundedToNextHour;
+
 @end
 
 NS_ASSUME_NONNULL_END

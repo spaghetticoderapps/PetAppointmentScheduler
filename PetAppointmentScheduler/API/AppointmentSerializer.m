@@ -12,7 +12,7 @@
 
 @implementation AppointmentSerializer
 
-+ (NSMutableArray *)serializeAppointmentsFromJSON:(NSMutableDictionary *)json {
++ (NSMutableArray *) serializeAppointmentsFromJSON:(NSMutableDictionary *)json {
     NSMutableArray *array = [NSMutableArray new];
     for(NSMutableDictionary *object in json) {
 

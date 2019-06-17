@@ -32,14 +32,21 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    // Check if in-memory AppointmentList cache exists
     if (!_appointmentLists) {
-        [APIClient getAppointmentLists:^(NSMutableArray * _Nonnull appointmentLists) {
+        [APIClient getAppointmentLists:^(NSMutableArray *appointmentLists, NSError *error) {
             __weak typeof(self) weakSelf = self;
-            weakSelf.appointmentLists = appointmentLists;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf.activityIndicator stopAnimating];
-                [weakSelf.tableView reloadData];
-            });
+            if (error) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf alertWithError:error];
+                });
+            } else {
+                weakSelf.appointmentLists = appointmentLists;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf.activityIndicator stopAnimating];
+                    [weakSelf.tableView reloadData];
+                });
+            }
             
         }];
     } else {

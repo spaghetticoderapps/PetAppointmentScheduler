@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIViewController (Utilities)
 
 - (void) alertWithMessage: (NSString *) message;
+- (void) alertWithError: (NSError *) error;
 
 @end
 
