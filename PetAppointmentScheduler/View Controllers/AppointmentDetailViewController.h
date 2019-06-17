@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) NSMutableArray<AppointmentList *> *appointmentLists;
 @property (strong, nonatomic) Appointment *appointment;
+
 + (NSString *) segueIdentifier;
 
 @end
