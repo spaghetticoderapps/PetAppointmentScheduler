@@ -59,7 +59,6 @@
 
 - (IBAction)reschedule:(id)sender {
     [self showReschedulerPickerView];
-    [self selectButton:_rescheduleButton];
 }
 
 - (IBAction)accept:(id)sender {
