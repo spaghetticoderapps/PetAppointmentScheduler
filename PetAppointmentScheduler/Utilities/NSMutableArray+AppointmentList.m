@@ -12,7 +12,7 @@
 
 @implementation NSMutableArray (AppointmentList)
 
-- (void) rescheduleAppointment:(Appointment *) appointment {
+- (void) automaticallyRescheduleAppointment:(Appointment *) appointment {
     
     NSDate *possibleRescheduledDate = [appointment.requestedDate addOneHour];
     NSMutableDictionary *appointmentDates = [NSMutableDictionary new];
@@ -48,8 +48,8 @@
     return [appointments sortedAppointmentList];
 }
 
-- (NSMutableArray<NSDate *> *)availableDatesInUpcomingMonth {
-    
+- (NSMutableArray<NSDate *> *)availableDatesInUpcomingMonthBasedOffDate:(NSDate *)date {
+    NSMutableArray<NSDate *> *availableDates = [NSMutableArray<NSDate *> new];
     NSMutableDictionary *appointmentDates = [NSMutableDictionary new];
     
     for (AppointmentList *appointmentList in self) {
@@ -58,12 +58,31 @@
         }
     }
     
-    // get all
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *oneMonthComponents = [[NSDateComponents alloc] init];
+    [oneMonthComponents setMonth:1];
     
-    // get all dates from a certain time
+    NSDateComponents *oneHourComponents = [[NSDateComponents alloc] init];
+    [oneHourComponents setHour:1];
     
+    NSDate *copiedDate = [NSDate new];
+    copiedDate = [date roundedToNextHour];
     
-    return @[];
+    NSDate *endDate = [calendar dateByAddingComponents:oneMonthComponents toDate:copiedDate options:0];
+    
+    while ([copiedDate compare:endDate] == NSOrderedAscending) {
+        
+        if (!appointmentDates[[copiedDate utcString]] && [copiedDate isDuringOfficeHours]) {
+            [availableDates addObject:copiedDate];
+            NSLog(@"%@, %@", [copiedDate formattedDay], [copiedDate formattedTime]);
+        }
+        
+        copiedDate = [calendar dateByAddingComponents:oneHourComponents
+                                                toDate:copiedDate
+                                               options:0];
+    }
+    
+    return availableDates;
 }
 
 - (void)removeProcessedAppointments:(void (^)(NSMutableArray * _Nonnull))completionBlock {

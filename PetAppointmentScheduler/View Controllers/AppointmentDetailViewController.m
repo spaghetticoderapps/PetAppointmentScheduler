@@ -12,13 +12,17 @@
 #import "NSMutableArray+AppointmentList.h"
 #import "UIViewController+Utilities.h"
 #import "NSDate+Utilities.h"
+#import "ReschedulerPickerView.h"
+#import "UIColor+Style.h"
 
 @interface AppointmentDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *declineButton;
 @property (weak, nonatomic) IBOutlet UIButton *rescheduleButton;
 @property (weak, nonatomic) IBOutlet UIButton *acceptButton;
-
+@property (strong, nonatomic) ReschedulerPickerView *reschedulerPickerView;
+@property (strong, nonatomic) UIToolbar *toolbar;
+@property (strong, nonatomic) NSMutableArray<NSDate *> *dates;
 @end
 
 @implementation AppointmentDetailViewController
@@ -54,10 +58,12 @@
 }
 
 - (IBAction)reschedule:(id)sender {
-    [_appointmentLists rescheduleAppointment:_appointment];
-    [self alertWithMessage:[NSString stringWithFormat:@"\nAppointment accepted and rescheduled to %@.\n", [_appointment.requestedDate formattedTime]]];
+    [self showReschedulerPickerView];
+//    [_appointmentLists rescheduleAppointment:_appointment];
+//    [self alertWithMessage:[NSString stringWithFormat:@"\nAppointment accepted and rescheduled to %@.\n", [_appointment.requestedDate formattedTime]]];
     [self selectButton:_rescheduleButton];
-    _appointment.status = AppointmentStatusAccepted;
+    
+//    _appointment.status = AppointmentStatusAccepted;
 }
 
 - (IBAction)accept:(id)sender {
@@ -96,6 +102,47 @@
     [selectedButton addBorder];
 }
 
+- (void) showReschedulerPickerView {
+    _dates = [_appointmentLists availableDatesInUpcomingMonthBasedOffDate:_appointment.requestedDate];
+    _reschedulerPickerView = [[ReschedulerPickerView alloc] initWithAppointment:_appointment dates: _dates];
+    [_reschedulerPickerView setBackgroundColor:[UIColor paleLightBlueColor]];
+    
+    [[self view] addSubview:_reschedulerPickerView];
+    [_reschedulerPickerView becomeFirstResponder];
+    
+    [_reschedulerPickerView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [[_reschedulerPickerView.heightAnchor constraintEqualToConstant:300] setActive:YES];
+    [[_reschedulerPickerView.bottomAnchor constraintEqualToAnchor:[self view].bottomAnchor] setActive:YES];
+    [[_reschedulerPickerView.leadingAnchor constraintEqualToAnchor:[self view].leadingAnchor] setActive:YES];
+    [[_reschedulerPickerView.trailingAnchor constraintEqualToAnchor:[self view].trailingAnchor] setActive:YES];
+    
+    _toolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 300, [UIScreen mainScreen].bounds.size.width, 200)];
+    _toolbar.barStyle = UIBarStyleDefault;
+    UIBarButtonItem *flexibleSpaceBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:NULL];
+    _toolbar.items = @[
+                       [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleDone target:self action:@selector(removeReschedulerPickerView)],
+                       flexibleSpaceBtn,
+                       flexibleSpaceBtn,
+                       [[UIBarButtonItem alloc]initWithTitle:@"Reschedule" style:UIBarButtonItemStyleDone target:self action:@selector(manuallyRescheduleAppointment)]
+                       ];
+    [_toolbar sizeToFit];
+    [self.view addSubview:_toolbar];
+}
 
+
+// MARK: - Selectors
+
+- (void) manuallyRescheduleAppointment {
+    NSInteger selectedRow = [_reschedulerPickerView selectedRowInComponent:0];
+    _appointment.requestedDate = _dates[selectedRow];
+    _appointment.status = AppointmentStatusAccepted;
+    [self removeReschedulerPickerView];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void) removeReschedulerPickerView {
+    [_toolbar removeFromSuperview];
+    [_reschedulerPickerView removeFromSuperview];
+}
 
 @end

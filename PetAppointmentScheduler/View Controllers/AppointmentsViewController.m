@@ -16,6 +16,7 @@
 #import "UIColor+Style.h"
 #import "NSMutableArray+AppointmentList.h"
 #import "UIViewController+Utilities.h"
+#import "ReschedulerPickerView.h"
 
 @interface AppointmentsViewController ()
 
@@ -44,6 +45,7 @@
     } else {
         _appointmentLists = [_appointmentLists sort];
         [_tableView reloadData];
+        
     }
 }
 
@@ -91,7 +93,7 @@
             }];
         }];
         
-        // Animate background color
+        // Animate cell background color
         NSTimeInterval animationDuration = 0.8;
         [UIView animateWithDuration:animationDuration/2 animations:^{
             [cell setBackgroundColor:[UIColor lightYellowColor]];
@@ -129,7 +131,7 @@
     Appointment *appointment = self->_appointmentLists[indexPath.section].appointments[indexPath.row];
     
     UIContextualAction *rescheduleAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"Reschedule" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
-        [self->_appointmentLists rescheduleAppointment:appointment];
+        [self->_appointmentLists automaticallyRescheduleAppointment:appointment];
         [self alertWithMessage:[NSString stringWithFormat:@"\nAppointment accepted and rescheduled to %@.\n", [appointment.requestedDate formattedTime]]];
         appointment.status = AppointmentStatusAccepted;
         self->_selectedIndexPath = indexPath;

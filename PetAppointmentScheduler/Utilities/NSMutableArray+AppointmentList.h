@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSMutableArray (AppointmentList)
 
-- (void) rescheduleAppointment: (Appointment *) appointment;
+- (void) automaticallyRescheduleAppointment: (Appointment *) appointment;
 - (NSMutableArray<AppointmentList *> *) sort;
-- (NSMutableArray<NSDate *> *) availableDatesInUpcomingMonth;
+- (NSMutableArray<NSDate *> *) availableDatesInUpcomingMonthBasedOffDate: (NSDate *) date;
 - (void) removeProcessedAppointments: (void (^) (NSMutableArray *appointmentLists)) completionBlock;
 @end
 
