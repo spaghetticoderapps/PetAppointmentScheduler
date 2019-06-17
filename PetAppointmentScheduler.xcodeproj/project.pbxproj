@@ -29,6 +29,7 @@
 		DDAD2D6E22B4811B00BCAD61 /* NSMutableArray+Appointment.m in Sources */ = {isa = PBXBuildFile; fileRef = DDAD2D6D22B4811B00BCAD61 /* NSMutableArray+Appointment.m */; };
 		DDAD2D7122B486B500BCAD61 /* UIViewController+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DDAD2D7022B486B500BCAD61 /* UIViewController+Utilities.m */; };
 		DDAD2D7422B55C9C00BCAD61 /* UIColor+Style.m in Sources */ = {isa = PBXBuildFile; fileRef = DDAD2D7322B55C9C00BCAD61 /* UIColor+Style.m */; };
+		DDDF066822B6F5C600B64749 /* ReschedulerPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDF066722B6F5C600B64749 /* ReschedulerPickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		DDAD2D7022B486B500BCAD61 /* UIViewController+Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utilities.m"; sourceTree = "<group>"; };
 		DDAD2D7222B55C9C00BCAD61 /* UIColor+Style.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Style.h"; sourceTree = "<group>"; };
 		DDAD2D7322B55C9C00BCAD61 /* UIColor+Style.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Style.m"; sourceTree = "<group>"; };
+		DDDF066622B6F5C600B64749 /* ReschedulerPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReschedulerPickerView.h; sourceTree = "<group>"; };
+		DDDF066722B6F5C600B64749 /* ReschedulerPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReschedulerPickerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +212,8 @@
 			children = (
 				DD2CF9E522ACE15E000C0295 /* AppointmentTableViewCell.h */,
 				DD2CF9E622ACE15E000C0295 /* AppointmentTableViewCell.m */,
+				DDDF066622B6F5C600B64749 /* ReschedulerPickerView.h */,
+				DDDF066722B6F5C600B64749 /* ReschedulerPickerView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 				DD2CF9AE22AC46A4000C0295 /* AppDelegate.m in Sources */,
 				DDAD2D6E22B4811B00BCAD61 /* NSMutableArray+Appointment.m in Sources */,
 				DD2CF9E022AC4C2B000C0295 /* Animal.m in Sources */,
+				DDDF066822B6F5C600B64749 /* ReschedulerPickerView.m in Sources */,
 				DD2CF9DA22AC4C19000C0295 /* Appointment.m in Sources */,
 				DD2CF9D722AC4A5A000C0295 /* APIClient.m in Sources */,
 				DD97C49F22B1A55A0056C4F9 /* NSDate+Utilities.m in Sources */,

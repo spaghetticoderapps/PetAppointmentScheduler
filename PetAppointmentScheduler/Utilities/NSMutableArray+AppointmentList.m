@@ -12,7 +12,7 @@
 
 @implementation NSMutableArray (AppointmentList)
 
-- (void) rescheduleAppointment:(Appointment *) appointment {
+- (void) automaticallyRescheduleAppointment:(Appointment *) appointment {
     
     NSDate *possibleRescheduledDate = [appointment.requestedDate addOneHour];
     NSMutableDictionary *appointmentDates = [NSMutableDictionary new];
@@ -58,7 +58,6 @@
         }
     }
     
-    NSDate *currentDate = [NSDate date];
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *oneMonthComponents = [[NSDateComponents alloc] init];
     [oneMonthComponents setMonth:1];
@@ -66,20 +65,22 @@
     NSDateComponents *oneHourComponents = [[NSDateComponents alloc] init];
     [oneHourComponents setHour:1];
     
-    NSDate *endDate = [calendar dateByAddingComponents:oneMonthComponents toDate:[NSDate date] options:0];
+    NSDate *copiedDate = [NSDate new];
+    copiedDate = [date roundedToNextHour];
     
+    NSDate *endDate = [calendar dateByAddingComponents:oneMonthComponents toDate:copiedDate options:0];
     
-    while ([currentDate compare:endDate] == NSOrderedAscending) {
+    while ([copiedDate compare:endDate] == NSOrderedAscending) {
         
-        if (!appointmentDates[[currentDate utcString]] && [currentDate isDuringOfficeHours]) {
-            [availableDates addObject:currentDate];
+        if (!appointmentDates[[copiedDate utcString]] && [copiedDate isDuringOfficeHours]) {
+            [availableDates addObject:copiedDate];
+            NSLog(@"%@, %@", [copiedDate formattedDay], [copiedDate formattedTime]);
         }
         
-        currentDate = [calendar dateByAddingComponents:oneHourComponents
-                                                toDate:currentDate
+        copiedDate = [calendar dateByAddingComponents:oneHourComponents
+                                                toDate:copiedDate
                                                options:0];
     }
-    
     
     return availableDates;
 }

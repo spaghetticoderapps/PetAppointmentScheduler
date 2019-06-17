@@ -16,6 +16,7 @@
 #import "UIColor+Style.h"
 #import "NSMutableArray+AppointmentList.h"
 #import "UIViewController+Utilities.h"
+#import "ReschedulerPickerView.h"
 
 @interface AppointmentsViewController ()
 
@@ -35,7 +36,6 @@
         [APIClient getAppointmentLists:^(NSMutableArray * _Nonnull appointmentLists) {
             __weak typeof(self) weakSelf = self;
             weakSelf.appointmentLists = appointmentLists;
-            [weakSelf.appointmentLists availableDatesInUpcomingMonthBasedOffDate:[NSDate date]];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf.activityIndicator stopAnimating];
                 [weakSelf.tableView reloadData];
@@ -131,7 +131,7 @@
     Appointment *appointment = self->_appointmentLists[indexPath.section].appointments[indexPath.row];
     
     UIContextualAction *rescheduleAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"Reschedule" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
-        [self->_appointmentLists rescheduleAppointment:appointment];
+        [self->_appointmentLists automaticallyRescheduleAppointment:appointment];
         [self alertWithMessage:[NSString stringWithFormat:@"\nAppointment accepted and rescheduled to %@.\n", [appointment.requestedDate formattedTime]]];
         appointment.status = AppointmentStatusAccepted;
         self->_selectedIndexPath = indexPath;

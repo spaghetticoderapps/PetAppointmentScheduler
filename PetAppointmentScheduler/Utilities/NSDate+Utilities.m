@@ -29,6 +29,15 @@
     return [formatter stringFromDate:self];
 }
 
+- (NSString *)shortFormattedTime {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"E, MMM d, yyyy";
+    NSString *date = [formatter stringFromDate:self];
+    formatter.dateFormat = @"h:mm a";
+    NSString *time = [formatter stringFromDate:self];
+    return [NSString stringWithFormat:@"%@ - %@", date, time];
+}
+
 - (NSDate *)addOneHour {
     return [self dateByAddingTimeInterval:3600];
 }
@@ -84,5 +93,13 @@
     }];
     
     return [times indexOfObject:requestedAppointmentTimeComponenents] == 1;
+}
+
+- (NSDate *)roundedToNextHour {
+    NSDate *roundedDate = [NSDate new];
+    NSTimeInterval ceilingTimeInterval = ceil([self timeIntervalSinceReferenceDate] / 3600.0) * 3600;
+    
+    roundedDate = [[NSDate alloc] initWithTimeIntervalSinceReferenceDate:ceilingTimeInterval];
+    return roundedDate;
 }
 @end
